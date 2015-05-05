@@ -1,0 +1,285 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="<{$xoops_langcode}>" lang="<{$xoops_langcode}>">
+<head>
+<meta http-equiv="content-type" content="text/html; charset=<{$xoops_charset}>" />
+<meta http-equiv="content-language" content="<{$xoops_langcode}>" />
+<meta name="robots" content="<{$xoops_meta_robots}>" />
+<meta name="keywords" content="<{$xoops_meta_keywords}>" />
+<meta name="description" content="<{$xoops_meta_description}>" />
+<meta name="rating" content="<{$xoops_meta_rating}>" />
+<meta name="author" content="<{$xoops_meta_author}>" />
+<meta name="copyright" content="<{$xoops_meta_copyright}>" />
+<meta name="generator" content="XOOPS" />
+<title><{$xoops_sitename}> - <{$xoops_pagetitle}></title>
+<link href="<{$xoops_url}>/favicon.ico" rel="SHORTCUT ICON" />
+<link rel="stylesheet" type="text/css" media="all" href="<{$xoops_url}>/xoops.css" />
+<link rel="stylesheet" type="text/css" media="all" href="<{$xoops_themecss}>" />
+<!-- RMV: added module header -->
+<{$xoops_module_header}>
+<script type="text/javascript">
+<!--
+<{$xoops_js}>
+//-->
+</script>
+</head>
+
+<body>
+
+<{include_php file="$xoops_rootpath/themes/tab_menu_g/ex_assign.php"}>
+
+<div id="container">
+
+<!--大枠定義-->
+<table cellspacing="0">
+<tr><td id="w1_1"></td><td id="w1_2"></td><td id="w1_3"></td></tr>
+<tr><td id="w2_1"></td><td id="w2_2">
+<!--大枠終了-->
+
+<!--ヘッダ部定義-->
+<table cellspacing="0">
+	<tr><td id="h1_1"></td><td id="h1_2" colspan="2"></td><td id="h1_3"></td></tr>
+	<tr><td id="h2_1"></td><td id="h2_2"><a href="<{$xoops_url}>/index.php"><img src="<{$xoops_imageurl}>logo.gif" alt="エクストラフィク" width="111px" height="64px" /></a></td>
+		<td id="h2_3">
+		<{if $xoops_isuser}>
+			<!--ユーザーがログインしていたら-->
+			ようこそ<{$xoops_uname}>さん！！
+			<!--「ユーザー名」さん「サイト名」へようこそ！！-->
+		<{else}>
+			<!-- ログインしていないなら -->
+			<a href="<{$xoops_url}>/register.php">
+			会員登録はこちらへ</a>
+			<!--「サイト名」に会員登録しませんか？-->
+		<{/if}>
+
+		<br /><br />	<!-- ログインしていないなら -->
+		<{if !$xoops_isuser}>
+			<form action="<{$xoops_url}>/user.php" method="post" style="margin: 0px;">
+			【会員入口】&nbsp;&nbsp;NAME&nbsp;&nbsp;
+			<input type="text" name="uname" size="18" style="width: 80px; height: 15px;"
+			onMouseOver"this.focus();" onFocus"if(this.value == 'username') this.value ='';"/>&nbsp;&nbsp;
+			PASS&nbsp;&nbsp;
+			<input type="password" name="pass" size="18" style="width: 80px; height: 15px;"/>&nbsp;&nbsp;
+			<input type="hidden" name="op" value="login" />
+			<input type="submit" value="ログイン" style="border: 1px solid #777777; background: #f5f5f5; color: #777777;"/>
+			</form>
+
+			<!--　ログインしていたら　-->
+		<{else}>【ユーザーメニュー】&nbsp;
+			<a href="<{$xoops_url}>/user.php">ステータス</a>&nbsp;|&nbsp;
+			<a href="<{$xoops_url}>/notifications.php">情報通知</a>&nbsp;|&nbsp;
+			<a href="<{$xoops_url}>/viewpmsg.php">受信箱</a>&nbsp;|&nbsp;
+			<a href="<{$xoops_url}>/user.php?op=logout">ログアウト</a>
+			<{if $xoops_isadmin}>&nbsp;|&nbsp;<a href="<{$xoops_url}>/admin.php">管理用</a><{/if}>
+		<{/if}>
+		</td>
+	<td id="h2_4"></td></tr>
+	<tr><td id="h3_1"></td><td id="h3_2">&nbsp;</td><td id="h3_3"></td><td id="h3_4"></td></tr>
+	<tr><td id="h4_1"></td><td id="h4_2" colspan="2"></td><td id="h4_3"></td></tr>
+</table>
+<!--ヘッダ部終了-->
+
+<center>
+<table cellspacing="0" style="width:810px;">
+<tr>
+<!--タブメニュー定義-->
+	<td id="space"></td>
+	<td id="<{if $ex_moduledir == ""}>tab_on<{else}>tab_off<{/if}>"><a href="<{$xoops_url}>/">トップ</a></td><td id="space"></td>
+	<td id="<{if $ex_moduledir == "bulletin"}>tab_on<{else}>tab_off<{/if}>"><a href="<{$xoops_url}>/modules/bulletin">ニュース</a></td><td id="space"></td>
+	<td id="<{if $ex_moduledir == "xhnewbb"}>tab_on<{else}>tab_off<{/if}>"><a href="<{$xoops_url}>/modules/xhnewbb">掲示板</a></td><td id="space"></td>
+	<td id="<{if $ex_moduledir == "html_tag2"}>tab_on<{else}>tab_off<{/if}>"><a href="<{$xoops_url}>/modules/html_tag2">タグリスト</a></td><td id="space"></td>
+	<td id="<{if $ex_moduledir == "myalbum0"}>tab_on<{else}>tab_off<{/if}>"><a href="<{$xoops_url}>/modules/myalbum0">画像集</a></td><td id="space"></td>
+	<td id="<{if $ex_moduledir == "mylinks"}>tab_on<{else}>tab_off<{/if}>"><a href="<{$xoops_url}>/modules/mylinks">リンク集</a></td><td id="space"></td>
+	<td id="<{if $ex_moduledir == "mydownloads"}>tab_on<{else}>tab_off<{/if}>"><a href="<{$xoops_url}>/modules/mydownloads">ダウンロード</a></td><td id="space"></td>
+	<td id="<{if $ex_moduledir == "sitemap"}>tab_on<{else}>tab_off<{/if}>"><a href="<{$xoops_url}>/modules/sitemap">サイトマップ</a></td><td id="space"></td>
+	<td id="<{if $ex_moduledir == "contact"}>tab_on<{else}>tab_off<{/if}>"><a href="<{$xoops_url}>/modules/contact">問い合わせ</a></td>
+<!--タブメニュー終了-->
+</tr>
+</table>
+</center>
+<div id="tab_bottom" align="right"></div>
+
+<!--ボディ枠定義-->
+<table cellspacing="0">
+<tr><td id="b1_1"></td><td id="b1_2"></td><td id="b1_3"></td></tr>
+<tr><td id="b2_1"></td><td id="b2_2">
+<!--ボディ枠終了-->
+
+<table cellspacing="0">
+
+<!--ボディ上部定義-->
+<tr><td id="u1_2"></td><td id="u1_3"></td><td id="u1_4"></td><td id="u1_5"></td><td id="u1_6"></td></tr>
+<!--ボディ上部終了-->
+
+<!--メインコンテンツ定義ここから-->
+<!--左ブロック左-->
+<tr>
+
+<!--左ブロック部定義-->
+	<{if $xoops_showlblock == 1}>
+	<td id="leftcolumn">
+	<{foreach item=block from=$xoops_lblocks}>
+	<table cellspacing="0">
+		<tr><td id="l1_2"></td><td id="l1_3"></td></tr>
+		<tr><td id="l2_2">
+		<{if $block.title|regex_replace:"/.*none/":"none"ne"none"}>
+			<div class="blockTitle"><{$block.title}></div>
+		<{/if}>
+		</td><td id="l2_3"></td></tr>
+		<tr><td id="l3_2">
+			<div class="blockContent"><{$block.content}></div>
+		</td><td id="l3_3"></td></tr>
+		<tr><td id="l4_2"></td><td id="l4_3"></td></tr>
+	</table>
+	<{/foreach}>
+	</td>
+
+<!--左ブロック右-->
+<td id="m2_3"></td>
+	<{/if}>
+<!--左ブロック終了-->
+
+<!--メイン部定義-->
+	<td id="centercolumn">
+	<{if $xoops_showcblock == 1}>
+	<table cellspacing="0">
+		<tr>
+<!--中央中央ブロック部定義-->
+		<td id="centerCcolumn" colspan="2">
+		<{foreach item=block from=$xoops_ccblocks}>
+		<table cellspacing="0">
+			<tr><td id="cc1_1"></td><td id="cc1_2"></td><td id="cc1_3"></td></tr>
+			<tr><td id="cc2_1"></td><td id="cc2_2">
+			<{if $block.title|regex_replace:"/.*none/":"none"ne"none"}>
+				<div class="blockTitle"><{$block.title}></div>
+			<{/if}>
+			</td><td id="cc2_3"></td></tr>
+			<tr><td id="cc3_1"></td><td id="cc3_2">
+				<div class="blockContent"><{$block.content}></div>
+			</td><td id="cc3_3"></td></tr>
+			<tr><td id="cc4_1"></td><td id="cc4_2"></td><td id="cc4_3"></td></tr>
+		</table>
+		<{/foreach}>
+		</td>
+<!--中央中央ブロック部終了-->
+		</tr>
+		<tr>
+<!--中央左ブロック部定義-->
+		<td id="centerLcolumn">
+		<{foreach item=block from=$xoops_clblocks}>
+		<table cellspacing="0">
+			<tr><td id="cl1_1"></td><td id="cl1_2"></td><td id="cl1_3"></td></tr>
+			<tr><td id="cl2_1"></td><td id="cl2_2">
+			<{if $block.title|regex_replace:"/.*none/":"none"ne"none"}>
+				<div class="blockTitle"><{$block.title}></div>
+			<{/if}>
+			</td><td id="cl2_3"></td></tr>
+			<tr><td id="cl3_1"></td><td id="cl3_2">
+				<div class="blockContent"><{$block.content}></div>
+			</td><td id="cl3_3"></td></tr>
+			<tr><td id="cl4_1"></td><td id="cl4_2"></td><td id="cl4_3"></td></tr>
+		</table>
+		<{/foreach}>
+		</td>
+<!--中央左ブロック部終了-->
+<!--中央右ブロック部定義-->
+		<td id="centerRcolumn">
+		<{foreach item=block from=$xoops_crblocks}>
+		<table cellspacing="0">
+			<tr><td id="cr1_1"></td><td id="cr1_2"></td><td id="cr1_3"></td></tr>
+			<tr><td id="cr2_1"></td><td id="cr2_2">
+			<{if $block.title|regex_replace:"/.*none/":"none"ne"none"}>
+				<div class="blockTitle"><{$block.title}></div>
+			<{/if}>
+			</td><td id="cr2_3"></td></tr>
+			<tr><td id="cr3_1"></td><td id="cr3_2">
+				<div class="blockContent"><{$block.content}></div>
+			</td><td id="cr3_3"></td></tr>
+			<tr><td id="cr4_1"></td><td id="cr4_2"></td><td id="cr4_3"></td></tr>
+		</table>
+		<{/foreach}>
+		</td>
+<!--中央右ブロック部終了-->
+		</tr>
+	</table>
+	<{/if}>
+<!--メインコンテンツ-->
+	<div id="content"><{$xoops_contents}></div>
+<!--右ブロック左-->
+</td><td id="m2_5"></td>
+<!--メイン部分終わり-->
+
+<!--右ブロック部定義-->
+	<{if $xoops_showrblock == 1}>
+	<td id="rightcolumn">
+	<{foreach item=block from=$xoops_rblocks}>
+	<table cellspacing="0">
+		<tr><td id="r1_1"></td><td id="r1_2"></td></tr>
+		<tr><td id="r2_1"></td><td id="r2_2">
+			<{if $block.title|regex_replace:"/.*none/":"none"ne"none"}>
+			<div class="blockTitle"><{$block.title}></div>
+		<{/if}>
+		</td></tr>
+		<tr><td id="r3_1"></td><td id="r3_2">
+			<div class="blockContent"><{$block.content}></div>
+		</td></tr>
+		<tr><td id="r4_1"></td><td id="r4_2"></td></tr>
+	</table>
+	<{/foreach}>
+<!--右ブロック右-->
+</td>
+	<{/if}>
+<!--右ブロック部終了-->
+
+	</tr>
+
+<!--ボディ下部定義-->
+<tr><td id="d3_2"></td><td id="d3_3"></td><td id="d3_4"></td><td id="d3_5"></td><td id="d3_6"></td></tr>
+<!--ボディ下部終了-->
+
+</table>
+
+<!--ボディ枠定義-->
+</td><td id="b2_3"></td></tr>
+<tr><td id="b3_1"></td><td id="b3_2"></td><td id="b3_3"></td></tr>
+</table>
+<!--ボディ枠終了-->
+
+<!--フッタ部定義-->
+<table cellspacing="0">
+	<tr><td id="f1_1"></td><td id="f1_2">
+<center>
+<table cellspacing="0" style="width:810px;">
+<tr>
+<!--タブメニュー定義-->
+	<td id="space"></td>
+	<td id="<{if $ex_moduledir == ""}>tab_on<{else}>tab_off<{/if}>"><a href="<{$xoops_url}>/">トップ</a></td><td id="space"></td>
+	<td id="<{if $ex_moduledir == "bulletin"}>tab_on<{else}>tab_off<{/if}>"><a href="<{$xoops_url}>/modules/bulletin">ニュース</a></td><td id="space"></td>
+	<td id="<{if $ex_moduledir == "xhnewbb"}>tab_on<{else}>tab_off<{/if}>"><a href="<{$xoops_url}>/modules/xhnewbb">掲示板</a></td><td id="space"></td>
+	<td id="<{if $ex_moduledir == "html_tag2"}>tab_on<{else}>tab_off<{/if}>"><a href="<{$xoops_url}>/modules/html_tag2">タグリスト</a></td><td id="space"></td>
+	<td id="<{if $ex_moduledir == "myalbum0"}>tab_on<{else}>tab_off<{/if}>"><a href="<{$xoops_url}>/modules/myalbum0">画像集</a></td><td id="space"></td>
+	<td id="<{if $ex_moduledir == "mylinks"}>tab_on<{else}>tab_off<{/if}>"><a href="<{$xoops_url}>/modules/mylinks">リンク集</a></td><td id="space"></td>
+	<td id="<{if $ex_moduledir == "mydownloads"}>tab_on<{else}>tab_off<{/if}>"><a href="<{$xoops_url}>/modules/mydownloads">ダウンロード</a></td><td id="space"></td>
+	<td id="<{if $ex_moduledir == "sitemap"}>tab_on<{else}>tab_off<{/if}>"><a href="<{$xoops_url}>/modules/sitemap">サイトマップ</a></td><td id="space"></td>
+	<td id="<{if $ex_moduledir == "contact"}>tab_on<{else}>tab_off<{/if}>"><a href="<{$xoops_url}>/modules/contact">問い合わせ</a></td>
+<!--タブメニュー終了-->
+</tr>
+</table>
+</center>
+
+</td><td id="f1_3"></td></tr>
+	<tr><td id="f2_1"></td><td id="footerbar"><br />
+		<{$xoops_footer}>&nbsp;&nbsp;Theme Designed by <a href="http://portal.expiece.com/" target="_blank">EXTRAFFIC</a>
+	</td><td id="f2_3"></td></tr>
+	<tr><td id="f3_1"></td><td id="f3_2"></td><td id="f3_3"></td></tr>
+</table>
+<!--フッタ部終了-->
+
+<!--大枠定義-->
+</td><td id="w2_3"></td></tr>
+<tr><td id="w3_1"></td><td id="w3_2"></td><td id="w3_3"></td></tr>
+</table>
+<!--大枠終了-->
+
+</div>
+</body>
+</html>
